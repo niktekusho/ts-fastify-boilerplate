@@ -1,0 +1,61 @@
+{
+    "name": "application",
+    "version": "0.0.0",
+    "description": "app_description",
+    "main": "index.js",
+    "scripts": {
+        "prebuild": "rimraf dist/",
+        "build": "tsc --build",
+        "build:watch": "tsc --watch",
+        "dev": "concurrently \"npm run build:watch\" \"npm run start:watch\"",
+        "start": "node dist/server.js",
+        "start:watch": "nodemon dist/server.js",
+        "test": "xo && jest"
+    },
+    "keywords": [],
+    "author": "Nicola Dal Maso <nicola.dalmaso@outlook.com> (https://github.com/niktekusho)",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^24.0.21",
+        "@types/node": "^12.12.3",
+        "@typescript-eslint/eslint-plugin": "^2.6.0",
+        "@typescript-eslint/parser": "^2.6.0",
+        "concurrently": "^5.0.0",
+        "eslint-config-xo-typescript": "^0.19.0",
+        "jest": "^24.9.0",
+        "nodemon": "^1.19.4",
+        "rimraf": "^3.0.0",
+        "ts-jest": "^24.1.0",
+        "typescript": "^3.6.4",
+        "xo": "^0.25.3"
+    },
+    "dependencies": {
+        "fastify": "^2.10.0",
+        "make-promises-safe": "^5.1.0"
+    },
+    "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+            "ts"
+        ],
+        "ignores": [
+            "test/",
+            "jest.config.js"
+        ]
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "src/*",
+            "test/*"
+        ]
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "collectCoverage": true,
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            "/test/"
+        ]
+    }
+}
