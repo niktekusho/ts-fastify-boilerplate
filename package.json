@@ -30,7 +30,7 @@
         "xo": "^0.25.3"
     },
     "dependencies": {
-        "fastify": "^2.10.0",
+        "fastify": "^2.15.1",
         "make-promises-safe": "^5.1.0"
     },
     "xo": {
