@@ -27,7 +27,7 @@
         "rimraf": "^3.0.0",
         "ts-jest": "^24.1.0",
         "typescript": "^3.6.4",
-        "xo": "^0.25.3"
+        "xo": "^0.53.1"
     },
     "dependencies": {
         "fastify": "^2.15.1",
